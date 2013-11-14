@@ -1,0 +1,69 @@
+
+
+<style type="text/css" media="screen">
+	.slide_widget .mask {
+		width:{$widget_info->imgWidth} !important;
+	}
+	.slides_container div {
+		width:{$widget_info->imgWidth} !important;
+		height:{$widget_info->imgHeight} !important;
+		display:block;
+	}
+	<!--@foreach($widget_info->images as $key => $image)-->
+			.xeBanner .section{$key} { background:url({$image['image']}) no-repeat;}
+	<!--@end-->
+
+
+</style>
+
+<div class="slide_widget">
+	<div class="mask">
+		<div class="slides">
+			<div class="slides_container xeBanner v{$xb} ">
+				
+				<!--@foreach($widget_info->info as $key => $row)-->
+					<!--@if(empty($row['image']))-->
+						<!--@continue;--><!--@end-->
+					<!--@end-->
+				<div>
+					<a href='{$row['url']}'>
+						<div class="section section{$key}">
+						<img src/>
+							<!--
+							<h1>{$row['title']}</h1>
+							<p>{$row['description']}</p>
+							-->
+						</div>
+					</a>
+				</div>
+				<!--@end-->
+			</div>
+		</div>
+	</div>
+</div>
+
+
+		<div id="slider" width="696">
+			<ul>				
+				<li><a href="http://templatica.com/preview/30"><img src="images/01.jpg" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/7"><img src="images/02.jpg" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/25"><img src="images/03.jpg" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/26"><img src="images/04.jpg" alt="Css Template Preview" /></a></li>
+				<li><a href="http://templatica.com/preview/27"><img src="images/05.jpg" alt="Css Template Preview" /></a></li>			
+			</ul>
+		</div>
+
+<!--@if(!$act)-->
+<script>
+	$(function(){
+		$('.slides').slides({
+			preload: false,
+			generateNextPrev: false,
+			play: 4000,
+			slideSpeed:2000,
+			pause:1
+		});
+		$('ul.pagination li a').html('&nbsp');
+	});
+</script>
+<!--@end-->

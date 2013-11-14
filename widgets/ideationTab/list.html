@@ -1,0 +1,17 @@
+<!--%import("css/ideation.css")-->
+<div class="tabSimple">
+    <ul>
+        {@$_idx=0}
+        <!--@foreach($tab_list as $key => $val)-->
+        <li<!--@if($_idx==0)--> class="active"<!--@end--> onmouseover="jQuery(this).parent().find('li.active').removeClass('active');jQuery(this).addClass('active');return false;"><a href="{getSiteUrl($val->domain,'','mid',$val->mid)}">{$val->browser_title}</a>
+            <ul>
+                <!--@foreach($val->document_list as $k => $v)-->
+                <li><a href="{$v->getPermanentUrl()}">{$v->getTitle($widget_info->subject_cut_size)}</a></li>
+                <!--@end-->
+                <li class="more"><a href="{getSiteUrl($val->domain,'','mid',$val->mid)}">{$lang->more}</a></li>
+            </ul>
+        </li>
+        {@$_idx++}
+        <!--@end-->
+    </ul>
+</div>

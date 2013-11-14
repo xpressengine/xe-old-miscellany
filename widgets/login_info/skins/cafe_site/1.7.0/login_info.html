@@ -1,0 +1,10 @@
+<!--%import("./filter/logout.xml")-->
+
+<!--@if($colorset == "black" || $colorset == "white")-->
+    <!--%import("./css/widget.css")-->
+<!--@end-->
+   <ul class="cafe_info">
+        <!--@foreach($logged_info->menu_list as $key => $val)-->
+        <li><a href="{getUrl('act',$key,'member_srl','')}">{Context::getLang($val)}</a></li>
+        <!--@end-->
+    </ul>

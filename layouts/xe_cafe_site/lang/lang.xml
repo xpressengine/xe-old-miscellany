@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<lang>
+	<item name="cafe_info">
+		<value xml:lang="ko"><![CDATA[카페 정보]]></value>
+		<value xml:lang="en"><![CDATA[Cafe Info]]></value>
+	</item>
+	<item name="new_members">
+		<value xml:lang="ko"><![CDATA[신입 회원 소식]]></value>
+		<value xml:lang="en"><![CDATA[New Members]]></value>
+		<value xml:lang="jp"><![CDATA[新規会員]]></value>
+		<value xml:lang="zh-CN"><![CDATA[新会员]]></value>
+		<value xml:lang="zh-TW"><![CDATA[最新會員]]></value>
+	</item>
+	<item name="document_ranking">
+		<value xml:lang="ko"><![CDATA[게시글 랭킹]]></value>
+		<value xml:lang="en"><![CDATA[Rank by documents]]></value>
+		<value xml:lang="jp"><![CDATA[書き込みランキング]]></value>
+		<value xml:lang="zh-CN"><![CDATA[发帖排行]]></value>
+		<value xml:lang="zh-TW"><![CDATA[主題排行]]></value>
+	</item>
+	<item name="comment_ranking">
+		<value xml:lang="ko"><![CDATA[댓글 랭킹]]></value>
+		<value xml:lang="en"><![CDATA[Rank by replies]]></value>
+		<value xml:lang="jp"><![CDATA[コメント数ランキング]]></value>
+		<value xml:lang="zh-CN"><![CDATA[评论排行]]></value>
+		<value xml:lang="zh-TW"><![CDATA[評論排行]]></value>
+	</item>
+</lang>

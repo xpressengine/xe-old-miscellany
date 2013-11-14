@@ -1,0 +1,139 @@
+<!--%import("./lang")-->
+<!--%import("css/framework.css")-->
+<!--%import("css/cafe.css")-->
+<!--%import("../../widgets/content/skins/default/css/widget.css")-->
+
+<!--// 모양 설정 > 본문 위치 -->
+<!--@if($layout_info->content_position == "right")-->{@$_posClass = "ec"}<!--@else-->{@$_posClass = "ce"}<!--@end-->
+
+<!--// indexUrl 설정 -->
+<!--@if(!$layout_info->index_url)-->
+    <!--@if($site_module_info)-->
+        {@$layout_info->index_url = getFullSiteUrl($site_module_info->domain)}
+    <!--@else-->
+        {@$layout_info->index_url = Context::getRequestUri()}
+    <!--@end-->
+<!--@end-->
+
+<!--// 로고 영역 이미지 -->
+<!--@if($layout_info->logo_background_image)-->
+<style type="text/css"> #header, .header {background-image:url("{$layout_info->logo_background_image}") !important; } </style>
+<!--@end-->
+
+<div id="xe">
+    <div class="fixed">
+        <div id="container" class="{$_posClass}">
+            <!-- #header -->
+            <div id="header">
+				<div class="header">
+					<a href="#content" class="skipToContent">Skip to content.</a>
+					<!--@if($layout_info->logo_image)-->
+					<h1><a href="{$layout_info->index_url}"><img src="{$layout_info->logo_image}" title="{$layout_info->logo_text}" /></a></h1>
+					<!--@elseif($layout_info->logo_text)-->
+					<h1><a href="{$layout_info->index_url}">{$layout_info->logo_text}</a></h1>
+					<!--@else-->
+					<h1><a href="{$layout_info->index_url}">Cafe<sup>XE</sup></a></h1>
+					<!--@end-->
+	
+					<p class="url"><a href="{$layout_info->index_url}">{$layout_info->index_url}</a></p>
+
+                    <!--@if(Context::get('is_homepage'))-->
+                    <ul class="topMenu">
+                    <!--@if(Context::getDefaultUrl())-->
+                        <li class="homepage"><a href="{Context::getUrl()}">Home</a></li>
+                    <!--@end-->
+                    <!--@if($grant->manager)-->
+                        <li class="setup"><a href="{getUrl('act','dispHomepageManage')}">{$lang->cmd_cafe_setup}</a></li>
+                    <!--@end-->
+                    </ul>
+                    <!--@end-->
+	
+					<form action="{getUrl()}" method="post" class="search">
+						<fieldset>
+							<input type="hidden" name="vid" value="{$vid}" />
+							<input type="hidden" name="act" value="dispHomepageIS" />
+							<input type="hidden" name="search_target" value="title" />
+							<!--<legend>{$lang->cmd_search}</legend>-->
+							<input type="text" name="is_keyword" class="inputText" title="{$lang->cmd_search}" />
+						</fieldset>
+					</form>
+				</div>
+            </div>
+            <!-- /#header -->
+
+            <hr class="hr" />
+			
+            <!-- #body -->
+            <div id="body">
+			
+                <div id="content" class="content">
+                    {$content}
+                </div>
+                <hr class="hr" />
+
+                <div class="extension e1">
+                    <!--// Site Status -->
+					<div id="info" class="info cafe">
+						<!--@if($site_module_info->site_srl>0)-->
+						<div class="section cafeInfo">
+							<button type="button" class="tab" onclick="document.getElementById('info').className='info cafe'">{$lang->cafe_info}</button>
+							<img class="zbxe_widget_output" widget="site_info" skin="default" />
+						</div>
+						<!--@end-->
+						<!--// Login Info Widget -->
+						<div class="section memberInfo">
+							<button type="button" class="tab" onclick="document.getElementById('info').className='info member'"><!--@if($is_logged)-->{$logged_info->nick_name}<!--@else-->{$lang->cmd_login}<!--@end--></button>
+							<img class="zbxe_widget_output" widget="login_info" skin="cafe_official" />
+						</div>
+					</div>
+                    <!--// Menu Widget -->
+					<div class="section cafeMenu">
+						<h2>{$lang->menu}</h2>
+						<img class="zbxe_widget_output" widget="navigator" skin="tree" />
+					</div>
+                    <!--// Visitor Status Widget -->
+					<div class="section visitorStat">
+						<h2>{$lang->counter}</h2>
+						<img class="zbxe_widget_output" widget="counter_status" skin="default" />
+					</div>
+                </div>
+				
+                <hr class="hr" />
+				
+				<!--@if($mid=='home')-->
+				<div class="extension e2">
+					<div class="section newMember">
+						<h2>{$lang->new_members}</h2>
+						<img class="zbxe_widget_output" widget="member_group" skin="default" list_count="5" />
+					</div>
+					<div class="section docRank">
+						<h2>{$lang->document_ranking}</h2>
+						<img class="zbxe_widget_output" widget="rank_count" rankby="document" skin="default" list_count="5" />
+					</div>
+					<div class="section replyRank">
+						<h2>{$lang->comment_ranking}</h2>
+						<img class="zbxe_widget_output" widget="rank_count" rankby="comment" skin="default" list_count="5" />
+					</div>
+					<div class="section onMember">
+						<h2>{$lang->logged_users}</h2>
+						<img class="zbxe_widget_output" widget="logged_members" skin="default" list_count="99999" />
+					</div>
+				</div>
+				<!--@end-->
+				
+            </div>
+            <!-- /#body -->
+            <hr class="hr" />
+
+            <!-- #footer -->
+            <div id="footer">
+				<address>
+				Powered by <a href="http://www.xpressengine.com" onclick="window.open(this.href);return false;" title="Xpress Engine">XE</a>. UI Dev. <a href="http://naradesign.net/">Naradesign</a>.
+				</address>
+				<!-- 언어 선택 위젯 -->
+				<img class="zbxe_widget_output" widget="language_select" skin="default" />
+            </div>
+            <!-- /#footer -->
+        </div>
+    </div>
+</div>

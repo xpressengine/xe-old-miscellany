@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addon version="0.1">
+	<title xml:lang="en">Breadcrumbs</title>
+	<description xml:lang="en">
+		This addon generates a line with links for Menu tree.
+	</description>
+	<version>0.1</version>
+	<date>2011-11-14</date>
+
+	<author email_address="xe_dev@arnia.ro" link="http://xpressengine.org/">
+		<name xml:lang="en">Arnia</name>
+	</author>
+</addon>

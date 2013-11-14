@@ -1,0 +1,113 @@
+<!--%import("./lang")-->
+<!--%import("css/framework.css")-->
+<!--%import("css/cafe.css")-->
+<!--%import("../../widgets/content/skins/default/css/widget.css")-->
+
+<!--// 모양 설정 > 본문 위치 -->
+<!--@if($layout_info->content_position == "right")-->{@$_posClass = "ec"}<!--@else-->{@$_posClass = "ce"}<!--@end-->
+
+<!--// indexUrl 설정 -->
+<!--@if(!$layout_info->index_url)-->
+    <!--@if($site_module_info)-->
+        {@$layout_info->index_url = getFullSiteUrl($site_module_info->domain)}
+    <!--@else-->
+        {@$layout_info->index_url = Context::getRequestUri()}
+    <!--@end-->
+<!--@end-->
+
+<!--// 로고 영역 이미지 -->
+<!--@if($layout_info->logo_background_image)-->
+<style type="text/css"> #header, .header {background-image:url("{$layout_info->logo_background_image}") !important; } </style>
+<!--@end-->
+
+<div id="xe">
+    <div class="fixed">
+        <div id="container" class="{$_posClass}">
+            <!-- #header -->
+            <div id="header">
+					<a href="#content" class="skipToContent">Skip to content.</a>
+					<!--@if($layout_info->logo_image)-->
+					<a href="{getUrl('','mid',$mid)}" class="cafe_logo"><img src="{$layout_info->logo_image}" title="{$layout_info->logo_text}" /></a>
+					<!--@end-->
+					<h1><a href="{getUrl('','mid',$mid)}">Cafe&nbsp;XE</a></h1>
+					<p class="url"><a href="{getUrl('','mid',$mid)}">{getFullUrl('','mid',$mid)}</a></p>
+					<a href="{getUrl('','module','admin','act','dispHomepageAdminContent')}" class="admin" cond="$grant->is_admin">Admin</a>
+
+					<form action="{getUrl()}" method="post" class="search">
+						<fieldset>
+							<input type="hidden" name="act" value="dispHomepageIS" />
+							<input type="hidden" name="search_target" value="title" />
+							<!--<legend>{$lang->cmd_search}</legend>-->
+							<input type="text" value="" name="is_keyword" class="inputText" title="{$lang->cmd_search}" />
+							<input type="image" class="buttonSearch" src="img/btn_search.gif"  alt="{$lang->cmd_search}">
+						</fieldset>
+					</form>
+            </div>
+            <!-- /#header -->
+            <hr class="hr" />
+            <!-- #body -->
+            <div id="body">
+                <div id="content" class="content">
+					<span class="end top"></span>
+					<div class="main">
+                    {$content}
+					</div>
+					<span class="end btm"></span>
+					
+                </div>
+                <hr class="hr" />
+                <div class="extension e1">
+                    <!--// Site Status -->
+					<div id="info" class="info cafe">
+
+						<!--// Login Info Widget -->
+						<div class="section memberInfo">
+							<img class="zbxe_widget_output" widget="login_info" skin="cafe_official" />
+						</div>
+					</div>
+					<!-- userAccount -->
+					<!--@if($is_logged)-->
+						<!--@if($my_cafes)-->
+							<div class="userAccount">
+								<div class="userTop">
+									<h2>My&nbsp;list</h2>
+								</div>
+								<!--@if($my_cafes && count($my_cafes))-->
+								<ul class="cafeList">
+									<!--@foreach($my_cafes as $val)-->
+									<li><a href="{getFullSiteUrl($val->domain)}">{htmlspecialchars(cut_str($val->cafe_title,26))}</a></li>
+									<!--@end-->
+								</ul>
+								<!--@end-->
+							</div>
+						<!--@end-->
+						<!--@if($isEnableCreateCafe)-->
+						<a href="{getUrl('act','dispHomepageCreate')}" class="generation_cafe ">{$lang->cmd_cafe_registration}</a>
+						<!--@end-->
+					<!--@end-->
+					<!--// userAccount -->
+					<span class="end btm"></span>
+					<span class="end top"></span>
+                </div>
+				
+                <hr class="hr" />
+				
+				
+            </div>
+            <!-- /#body -->
+        </div>
+            <hr class="hr" />
+
+            <!-- #footer -->
+            <div id="footer">
+				<div class="sta_footer">
+					<address>
+					Powered by XE.
+					</address>
+					<!-- 언어 선택 위젯 -->
+					<img class="zbxe_widget_output" widget="language_select" skin="xe_cafe_language" />
+				</div>
+            </div>
+            <!-- /#footer -->
+    </div>
+</div>

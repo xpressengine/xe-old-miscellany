@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skin version="0.2">
+	<title xml:lang="ko">Simple 탭 최근글 스킨</title>
+	<description xml:lang="ko">제목만 노출되는 매우 간단한 형식의 탭 최근글 스킨입니다</description>
+	<version>0.1</version>
+	<date>2009-07-13</date>
+	<link>http://www.xpressengine.com</link>
+
+	<author email_address="zero@zeroboard.com" link="http://www.xpressengine.com">
+		<name xml:lang="ko">zero</name>
+	</author>
+
+	<colorset>
+		<color name="normal">
+			<title xml:lang="ko">기본 컬러</title>
+		</color>
+	</colorset>
+</skin>

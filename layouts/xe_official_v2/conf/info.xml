@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout version="0.2">
+    <title xml:lang="ko">XpressEngine ver.2</title>
+    <description xml:lang="ko">
+        XpressEngine 공식 레이아웃 ver 2 입니다.
+        NHN에서 제작하였으며 제작에 참가한 분들은 아래와 같습니다.
+        디자인 : 김지은
+        퍼블리싱 : 정찬명
+        레이아웃 제작 : zero
+    </description>
+    <version>0.2</version>
+    <date>2010-05-27</date>
+    <link>http://blog.nzeo.com</link>
+
+    <author email_address="" link="http://www.nhn.com">
+        <name xml:lang="ko">NHN</name>
+    </author>
+
+    <extra_vars>
+        <var name="colorset" type="select">
+            <title xml:lang="ko">컬러셋</title>
+            <description xml:lang="ko">원하시는 컬러셋을 선택해주세요.</description>
+            <options value="black">
+                <title xml:lang="ko">검은색 (기본)</title>
+            </options>
+            <options value="blue">
+                <title xml:lang="ko">파란색</title>
+            </options>
+            <options value="sky">
+                <title xml:lang="ko">하늘색</title>
+            </options>
+            <options value="cyan">
+                <title xml:lang="ko">청록색</title>
+            </options>
+            <options value="purple">
+                <title xml:lang="ko">보라색</title>
+            </options>
+            <options value="orange">
+                <title xml:lang="ko">오렌지색</title>
+            </options>
+        </var>
+        <var name="layout_type" type="select">
+            <title xml:lang="ko">레이아웃 형태</title>
+            <description xml:alng="ko">본문 또는 본문+서브메뉴 영역의 형태를 선택해주세요.</description>
+            <options value="ce">
+                <title xml:lang="ko">본문 + 서브메뉴 영역 (기본)</title>
+            </options>
+            <options value="c">
+                <title xml:lang="ko">본문</title>
+            </options>
+        </var>
+        <var name="layout_background" type="select">
+            <title xml:lang="ko">레이아웃 배경</title>
+            <description xml:alng="ko">레이아웃의 배경에 그라데이션 배경 이미지를 노출합니다</description>
+            <options value="N">
+                <title xml:lang="ko">노출하지 않음</title>
+            </options>
+            <options value="Y">
+                <title xml:lang="ko">노출</title>
+            </options>
+        </var>
+        <var name="logo_image" type="image">
+            <title xml:lang="ko">로고이미지 (여백)</title>
+            <description xml:lang="ko">레이아웃의 좌측 상단에 표시될 로고이미지를 입력하세요. 여백이 적용되기에 세로 40px 로고이미지를 이용해주세요.</description>
+        </var>
+        <var name="logo_image_2" type="image">
+            <title xml:lang="ko">로고 이미지 (여백 없음)</title>
+            <description xml:lang="ko">로고이미지를 좌우 여백 없이 왼쪽 상단에 출력합니다. </description>
+        </var>
+        <var name="logo_url" type="text">
+            <title xml:lang="ko">로고 이미지 링크</title>
+            <description xml:lang="ko">로고를 클릭시에 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+
+        <var name="title_sub" type="text">
+            <title xml:lang="ko">본문 상단 작은 제목</title>
+            <description xml:lang="ko">본문 상단의 작은 제목 글자를 입력해주세요.</description>
+        </var>
+        <var name="title_main" type="text">
+            <title xml:lang="ko">본문 상단 제목</title>
+            <description xml:lang="ko">본문 상단의 제목 글자를 입력해주세요.</description>
+        </var>
+        <var name="title_image" type="image">
+            <title xml:lang="ko">본문 상단 제목 이미지</title>
+            <description xml:lang="ko">본문 상단의 제목 영역에 노출될 이미지를 입력해주세요. (155x142 크기로 해주세요)</description>
+        </var>
+        <var name="title_description" type="textarea">
+            <title xml:lang="ko">본문 상단 내용</title>
+            <description xml:lang="ko">본문 상단에 표시되는 영역의 내용을 입력해주세요. (HTML 사용 가능하며 h4:작은제목, a:링크, ul:여러 항목 은 예약된 서식입니다)</description>
+        </var>
+        <var name="title_display" type="select">
+            <title xml:lang="ko">타이틀 노출</title>
+            <description xml:alng="ko">본문의 상단에 노출될 타이틀을 1차메뉴에서만 표시하거나 모두 표시할 수 있도록 설정할 수 있습니다</description>
+            <options value="main">
+                <title xml:lang="ko">1차 메뉴에서만 표시</title>
+            </options>
+            <options value="all">
+                <title xml:lang="ko">모든 메뉴에서 표시</title>
+            </options>
+        </var>
+
+        <var name="right_title" type="text">
+            <title xml:lang="ko">서브메뉴 영역 제목</title>
+            <description xml:alng="ko">서브메뉴 영역의 제목을 입력해주세요.</description>
+        </var>
+        <var name="sitemap_image" type="image">
+            <title xml:lang="ko">좌하단 사이트맵 이미지</title>
+            <description xml:lang="ko">좌하단 사이트맵 좌측에 나오는 이미지를 입력하세요.</description>
+        </var>
+        <var name="sitemap_url" type="text">
+            <title xml:lang="ko">좌하단 사이트맵 이미지 링크</title>
+            <description xml:lang="ko">좌하단 사이트맵 좌측에 나오는 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_1" type="image">
+            <title xml:lang="ko">#1 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_1" type="text">
+            <title xml:lang="ko">#1 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_2" type="image">
+            <title xml:lang="ko">#2 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_2" type="text">
+            <title xml:lang="ko">#2 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_3" type="image">
+            <title xml:lang="ko">#3 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_3" type="text">
+            <title xml:lang="ko">#3 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_4" type="image">
+            <title xml:lang="ko">#4 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_4" type="text">
+            <title xml:lang="ko">#4 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_5" type="image">
+            <title xml:lang="ko">#5 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_5" type="text">
+            <title xml:lang="ko">#5 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+        <var name="banner_image_6" type="image">
+            <title xml:lang="ko">#6 우하단 배너 이미지</title>
+            <description xml:lang="ko">우하단의 서브메뉴 영역에 표시할 배너 이미지를 입력해주세요.</description>
+        </var>
+        <var name="banner_url_6" type="text">
+            <title xml:lang="ko">#6 우하단 배너 이미지 링크</title>
+            <description xml:lang="ko">우하단 배너 이미지 클릭시 이동할 링크 URL을 입력해 주세요.</description>
+        </var>
+    </extra_vars>
+
+    <menus>
+        <menu name="main_menu" maxdepth="2" default="true">
+            <title xml:lang="ko">메뉴</title>
+        </menu>
+    </menus>
+</layout>

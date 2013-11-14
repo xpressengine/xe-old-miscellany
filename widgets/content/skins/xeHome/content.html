@@ -1,0 +1,17 @@
+<!--%import("style.css")-->
+<!--@if($widget_info->tab_type && $widget_info->tab)-->
+    <!--@foreach($widget_info->tab as $module_srl => $tab)-->
+        {@$widget_info->content_items = $tab->content_items}
+        <!--@if($colorset == "notice")-->
+            <!--#include("./notice.html")-->
+        <!--@elseif($colorset == "webzine")-->
+            <!--#include("./webzine.html")-->
+        <!--@end-->
+    <!--@end-->
+<!--@else-->
+    <!--@if($colorset == "notice")-->
+        <!--#include("./notice.html")-->
+    <!--@elseif($colorset == "webzine")-->
+        <!--#include("./webzine.html")-->
+    <!--@end-->
+<!--@end-->

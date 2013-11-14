@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+/* Main Article */
+.popularSimple{ position:relative; *zoom:1;}
+.popularSimple ul{ position:relative; margin:0; padding:0; list-style:none; border-bottom:1px solid #e1e1e1; *zoom:1;}
+.popularSimple ul ul{ display:none; position:absolute; width:100%; top:31px; left:0; border:0; padding:25px 0 0 0; }
+.popularSimple ul:after{ content:""; display:block; clear:both;}
+.popularSimple li{ float:left; margin-right:-1px; margin-bottom:-1px; *zoom:1;}
+.popularSimple li a{ position:relative; float:left; padding:8px 19px 7px 19px; text-decoration:none; border:1px solid #ccc; background:#f6f6f6; color:#999; }
+.popularSimple li.active a{ color:#000; font-weight:bold; border-bottom:1px solid #fff; background:#fff; letter-spacing:-1px;}
+.popularSimple li.active li{ float:none; margin:0 0 6px 0; padding:0 0 0 28px; background:url(../img/iconList.gif) no-repeat 15px center;}
+.popularSimple li.active li a{ padding:0; float:none; border:0; background:none; color:#837f7f; font-weight:normal;}
+.popularSimple li.active ul{ display:block;}
+.popularSimple li li.more{ position:absolute; top:-20px; right:13px; background:url(../img/iconMore.gif) no-repeat right center; padding:0 8px 0 0; letter-spacing:-1px; border:0; font-size:11px;}
+.popularSimple li li.more a{ color:#afafaf;}
+.popularSimple li li a:hover,
+.popularSimple li li a:active,
+.popularSimple li li a:focus{ text-decoration:underline;}
+

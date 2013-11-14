@@ -1,0 +1,32 @@
+<!--%import("./filter/login.xml")-->
+<!--@if($colorset == "black" || $colorset == "white")-->
+    <!--%import("./css/widget.css")-->
+<!--@end-->
+
+<script type="text/javascript">
+    var keep_signed_msg = "{$lang->about_keep_signed}";
+    xAddEventListener(window, "load", function(){ xGetElementById("formLogin").user_id.focus(); });
+</script>
+
+<div class="widgetContainer<!--@if($colorset=="black")--> black<!--@end-->">
+    <!--// XE Login -->
+	<form action="{getUrl('','act','procMemberLogin')}" method="post" ruleset="@login" id="formLogin" class="widgetLogin">
+	<input type="hidden" name="act" value="procMemberLogin" />
+	<input type="hidden" name="success_return_url" value="{htmlspecialchars(getrequesturibyserverenviroment())}" />
+    <fieldset>
+        <dl>
+            <dt><label for="uid">{$lang->user_id} :</label></dt>
+            <dd><input name="user_id" type="text" id="uid" class="widgetXeInputText" title="{$lang->user_id}" /></dd>
+            <dt><label for="upw">{$lang->password} :</label></dt>
+            <dd><input name="password" type="password" id="upw" class="widgetXeInputText" title="{$lang->password}" /></dd>
+        </dl>
+        <p><input name="keep_signed" id="keepid" type="checkbox" value="Y" onclick="if(this.checked) return confirm(keep_signed_msg);" class="widgetXeInputCheck" /><label for="keepid">{$lang->keep_signed}</label></p>
+        <span class="button green login"><input name="" type="submit" value="{$lang->cmd_login}" /></span>
+        <ul class="help">
+            <li><a href="{getUrl('act','dispMemberSignUpForm')}">{$lang->cmd_signup}</a></li>
+            <li><a href="{getUrl('act','dispMemberFindAccount')}">{$lang->cmd_find_member_account}</a></li>
+            <li><a href="{getUrl('act','dispMemberResendAuthMail')}">{$lang->cmd_resend_auth_mail}</a></li>
+        </ul>
+    </fieldset>
+    </form>
+</div>

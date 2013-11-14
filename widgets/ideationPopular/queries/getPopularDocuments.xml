@@ -1,0 +1,15 @@
+<query id="getPopularDocuments" action="select">
+    <tables>
+        <table name="documents" />
+    </tables>
+    <columns>
+        <column name="*" />
+    </columns>
+    <conditions>
+        <condition operation="in" column="module_srl" var="module_srls" filter="number" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="readed_count" order="desc" />
+        <list_count var="list_count" default="5" />
+    </navigation>
+</query>

@@ -1,0 +1,15 @@
+<query id="getNewestComment" action="select">
+    <tables>
+        <table name="comments" />
+    </tables>
+    <columns>
+        <column name="*" />
+    </columns>
+    <conditions>
+        <condition operation="in" column="module_srl" var="module_srls" filter="numbers" />
+    </conditions>
+    <navigation>
+        <index var="sort_index" default="list_order" order="order_type" />
+        <list_count var="list_count" default="5" />
+    </navigation>
+</query>

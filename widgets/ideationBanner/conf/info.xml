@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">ideationBanner</title>
+	<title xml:lang="zh-TW">ideationBanner</title>
+	<description xml:lang="ko">3개의 공지를 롤링하는 위젯입니다.</description>
+	<description xml:lang="zh-TW">可顯示三種資料的滾動式 widget</description>
+	<version>0.1</version>
+	<date>2009-07-13</date>
+
+	<author email_address="zero@zeroboard.com" link="http://www.zeroboard.com">
+		<name xml:lang="ko">zero</name>
+		<name xml:lang="zh-TW">zero</name>
+	</author>
+
+	<extra_vars>
+        <var id="banner_sub_title_1">
+            <type>text</type>
+            <name xml:lang="ko">작은 제목 #1</name>
+            <name xml:lang="zh-TW">副標題 #1</name>
+            <description xml:lang="ko">작은 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入副標題。</description>
+        </var>
+        <var id="banner_title_1">
+            <type>text</type>
+            <name xml:lang="ko">제목 #1</name>
+            <name xml:lang="zh-TW">標題 #1</name>
+            <description xml:lang="ko">제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入標題。</description>
+        </var>
+        <var id="banner_description_1">
+            <type>textarea</type>
+            <name xml:lang="ko">설명 #1</name>
+            <name xml:lang="zh-TW">說明 #1</name>
+            <description xml:lang="ko">배너 이미지에 표시될 설명을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入要顯示的圖片說明。</description>
+        </var>
+        <var id="banner_url_title_1">
+            <type>text</type>
+            <name xml:lang="ko">URL Title #1</name>
+            <name xml:lang="zh-TW">URL標題 #1</name>
+            <description xml:lang="ko">링크 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入 URL 標題。</description>
+        </var>
+        <var id="banner_url_1">
+            <type>text</type>
+            <name xml:lang="ko">URL #1</name>
+            <name xml:lang="zh-TW">URL #1</name>
+            <description xml:lang="ko">배너 이미지에 연결될 URL을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入廣告圖片的 URL 網址。</description>
+        </var>
+        <var id="banner_sub_title_2">
+            <type>text</type>
+            <name xml:lang="ko">작은 제목 #2</name>
+            <name xml:lang="zh-TW">副標題 #2</name>
+            <description xml:lang="ko">작은 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入副標題。</description>
+        </var>
+        <var id="banner_title_2">
+            <type>text</type>
+            <name xml:lang="ko">제목 #2</name>
+            <name xml:lang="zh-TW">標題 #2</name>
+            <description xml:lang="ko">제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入標題。</description>
+        </var>
+        <var id="banner_description_2">
+            <type>textarea</type>
+            <name xml:lang="ko">설명 #2</name>
+            <name xml:lang="zh-TW">說明 #2</name>
+            <description xml:lang="ko">배너 이미지에 표시될 설명을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入要顯示的圖片說明。</description>
+        </var>
+        <var id="banner_url_title_2">
+            <type>text</type>
+            <name xml:lang="ko">URL Title #2</name>
+            <name xml:lang="zh-TW">URL標題 #2</name>
+            <description xml:lang="ko">링크 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入 URL 標題。</description>
+        </var>
+        <var id="banner_url_2">
+            <type>text</type>
+            <name xml:lang="ko">URL #2</name>
+            <name xml:lang="zh-TW">URL #2</name>
+            <description xml:lang="ko">배너 이미지에 연결될 URL을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入廣告圖片的 URL 網址。</description>
+        </var>
+        <var id="banner_sub_title_3">
+            <type>text</type>
+            <name xml:lang="ko">작은 제목 #3</name>
+            <name xml:lang="zh-TW">副標題 #3</name>
+            <description xml:lang="ko">작은 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入副標題。</description>
+        </var>
+        <var id="banner_title_3">
+            <type>text</type>
+            <name xml:lang="ko">제목 #3</name>
+            <name xml:lang="zh-TW">標題 #3</name>
+            <description xml:lang="ko">제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入標題。</description>
+        </var>
+        <var id="banner_description_3">
+            <type>textarea</type>
+            <name xml:lang="ko">설명 #3</name>
+            <name xml:lang="zh-TW">說明 #3</name>
+            <description xml:lang="ko">배너 이미지에 표시될 설명을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入要顯示的圖片說明。</description>
+        </var>
+        <var id="banner_url_title_3">
+            <type>text</type>
+            <name xml:lang="ko">URL Title #3</name>
+            <name xml:lang="zh-TW">URL標題 #3</name>
+            <description xml:lang="ko">링크 제목을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入URL標題。</description>
+        </var>
+        <var id="banner_url_3">
+            <type>text</type>
+            <name xml:lang="ko">URL #3</name>
+            <name xml:lang="zh-TW">URL #3</name>
+            <description xml:lang="ko">배너 이미지에 연결될 URL을 입력해주세요.</description>
+            <description xml:lang="zh-TW">請輸入廣告圖片的 URL 網址。</description>
+        </var>
+	</extra_vars>
+</widget>

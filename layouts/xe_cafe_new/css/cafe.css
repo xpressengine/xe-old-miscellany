@@ -1,0 +1,168 @@
+@charset "utf-8";
+/* NHN > UIT Center > Open UI Technology Team > Jeong Chan Myeong(dece24@nhncorp.com) */
+
+/* Element Reset */
+html,
+body{ height:100%; margin:0; font-family:Arial,Tahoma, Sans-serif; font-size:12px;}
+fieldset{ border:0; margin:0; padding:0;}
+img{ border:0;}
+
+a{ text-decoration:none;}
+a:hover,
+a:active,
+a:focus{ text-decoration:underline;}
+
+/* Common Class */
+.skipToContent { position:absolute; left:-1000%; display:block; width:1px; height:1px; font-size:0; line-height:0; overflow:hidden; text-decoration:none; white-space:nowrap;}
+.skipToContent:hover,
+.skipToContent:active,
+.skipToContent:focus{ position:relative; left:0; width:98%; height:auto; padding:5px 1%; font-size:12px; line-height:1;}
+
+.inputText{ font-size:12px;}
+.hr{ display:none;}
+
+/* Layout */
+.extension.e1{ margin-bottom:0;}
+.extension.e2{ display:block !important; clear:both;}
+
+/* Header */
+#header{ height:144px; position:relative}
+#header .header{ padding:0 0 26px 50px; background-position:left bottom;}
+#header .cafe_logo{ position:absolute; top:60px;}
+#header h1{ margin:0; font-size:35px; line-height:1; position:absolute; top:57px; left:48px;}
+#header h1 a{ color:#3a3a3a; text-decoration:none; font-family:[Helvetica65], Arial;}
+#header h1 a img{ _behavior:url(./common/js/iePngFix.htc);}
+#header .admin{ position:absolute; right:0; top:37px; color:#666; background:url(../img/ico_opn2.gif) no-repeat 100% 50%; padding-right:9px;}
+#header .url{ margin:0; position:absolute; top:94px; left:48px}
+#header .url a{ color:#999; font-size:10px; line-height:1; text-decoration:none;}
+#header .url a:hover,
+#header .url a:active,
+#header .url a:focus{ color:#666;}
+#header .search{ position:absolute; top:81px; right:0; background:url(../img/bg_search.gif) no-repeat; width:172px; height:23px; zoom:1;}
+#header .search .inputText{ border:0; background:none;color:#adadad; padding:4px 0 0 12px; float:left;zoom:1;}
+#header .search .inputText:focus{}
+#header .search .buttonSearch{margin:5px 15px 0 0}
+#header .topMenu { position:absolute; top:15px; padding:0; margin:0; right:30px; list-style:none; }
+#header .topMenu li { display:block; float:left; margin:0 0 0 15px; padding:2px 0 2px 18px; }
+#header .topMenu li.homepage { background:url(../img/icon_homepage.gif) no-repeat left 2px; }
+#header .topMenu li.setup { background:url(../img/icon_management.gif) no-repeat left 1px; }
+#header .topMenu li a{color:#8682AE;}
+
+/* Footer */
+#footer{ background:url(../img/bg_footer.gif) repeat-x; height:58px;*zoom:1}
+#footer address{ position:absolute; top:15px; left:0; height:16px; padding:0; text-align:left; font-style:normal; font-size:12px; line-height:16px; color:#fff; z-index:2; background:url(../img/iconXE.gif) no-repeat left center;}
+#footer address a{ font-size:12px; color:#fff;}
+#footer div{ position:relative; overflow:visible !important; z-index:1; text-align:right;}
+#footer .widgetLanguage{ position:relative; *zoom:1;}
+#footer .widgetLanguage:after{ content:""; display:block; clear:both;}
+#footer .widgetLanguage p{margin:15px 0 0; float:right}
+#footer .widgetLanguage p a{ color:#fff; font-size:12px; background:url(../img/ico_opn.gif) no-repeat 100% 50%; padding-right:11px}
+#footer .language_selector{ font-size:11px; font-family:Dotum, 돋움; color:#767676;}
+#footer .langList{ display:none; position:absolute; top:auto !important; bottom:20px !important; right:0 !important; list-style:none; border:1px solid #ddd; background:#fff; margin:0; padding:10px;}
+#footer .langList a{ font-size:11px; white-space:nowrap; color:#767676;}
+
+/* Extension E1 */
+
+/* userAccount */
+.userAccount{padding:0 10px 8px 10px; border:1px solid #e2e2e2; background:#fafafa;-moz-border-radius:5px; -webkit-border-radius:5px; font-family:Arial; margin-bottom:23px}
+.userAccount .userTop{ border-bottom:1px solid #CCC; zoom:1; overflow:hidden; margin-bottom:16px}
+.userAccount .userTop h2{ margin:0; float:left; padding:10px 0; font-size:12px}
+.userAccount .userTop .list_manage{ float:right;}
+.userAccount .userTop .list_manage a{color:#727272; background:url(../layouts/xe_cafe_new/img/bg_manage.gif) no-repeat 0 0; height:21px; line-height:21px; display:inline-block; _display:inline; zoom:1; padding-left:10px; margin-top:7px; cursor:hand}
+.userAccount .userTop .list_manage a span{background:url(../layouts/xe_cafe_new/img/bg_manage.gif) no-repeat 100% 0; height:21px; line-height:21px; display:inline-block;padding-right:10px}
+.userAccount .communityInfo{ position:relative; margin:0; padding:1px 0 2px 0; list-style:none; *zoom:1; overflow:hidden;}
+.userAccount .communityInfo:after{ content:""; display:block; clear:both;}
+.userAccount .communityInfo li{ position:relative; left:-5px; padding:0 4px; font-size:11px; height:9px; font-family:Dotum; float:left; border-left:1px solid #dedede; color:#555;}
+.userAccount .communityInfo li a{ color:#555;}
+.userAccount .communityInfo li em{ font-style:normal; color:#fd565e; font-size:9px; font-family:Tahoma;}
+.userAccount .cafeList{ position:relative; margin:0; padding:0; list-style:none; *zoom:1;}
+.userAccount .cafeList li{ padding:0 0 0 6px; margin:0 0 8px 0; position:relative; background: url(../../../../layouts/xe_cafe_new/img/bu3.gif) no-repeat 0 50%}
+.userAccount .cafeList li a{ color:#999999;}
+.userAccount .cafeList li .tcbSmall{ position:absolute; top:-2px; right:0;}
+.userAccount .tcbLarge{ left:20px; width:201px;}
+.userAccount .tcbLarge *{ padding:0; width:201px;}
+/* Info */
+.extension .info{ position:relative; border:1px solid #dcdcdc; margin:0; padding:0 14px 4px 14px; background:#f9f9f9; *zoom:1; -moz-border-radius:5px; -webkit-border-radius:5px; margin-bottom:10px}
+.extension .info .section{ position:static !important;}
+.extension .info .tab{ position:absolute; top:4px; height:30px; line-height:30px; border:1px solid #ddd; padding:0; margin:0; overflow:visible; font-family:Tahoma; font-size:12px; cursor:pointer; color:#999; font-weight:bold; background:#f4f4f4; -moz-border-radius-topleft:3px; -webkit-border-top-left-radius:3px; -moz-border-radius-topright:3px; -webkit-border-top-right-radius:3px;}
+.extension .info .cafeInfo .tab{ left:4px; width:105px;}
+.extension .info .memberInfo .tab{ right:4px; width:106px;}
+.extension .info .widgetContainer{ margin:15px}
+.extension .info .widgetContainer.login_info{ margin:0 0 15px 0; zoom:1}
+.extension .info.cafe .cafeInfo .widgetContainer,
+.extension .info.member .memberInfo .widgetContainer{ display:block;}
+.extension .info.cafe .cafeInfo .tab,
+.extension .info.member .memberInfo .tab{ color:#333; border-bottom:0; background:#fff;}
+
+.extension .info .button,
+.extension .info .button span,
+.extension .info .button input{ display:inline-block; position:relative; padding:0; margin:0; border:0; background-color:transparent; background-image:url(../img/buttonAction.gif) !important; background-repeat:no-repeat; font-size:12px; color:#666 !important; font-weight:bold; height:35px; line-height:35px; vertical-align:top !important; overflow:visible; cursor:pointer;}
+.extension .info .button{ margin:10px 3px 0 0; background-position:left top;}
+.extension .info .button span,
+.extension .info .button input{ width:161px; background-position:right top; text-align:center; top:0; border:1px solid #d8d8d8}
+.extension .info .cafeInfo dl{ margin:0; color:#767676;}
+.extension .info .cafeInfo dt{ float:left; clear:left; height:20px; margin:0 3px 0 0; padding:0 0 0 15px; background:url(../img/iconInfo.gif) no-repeat left 2px;}
+.extension .info .cafeInfo dd{ margin:0; height:20px; color:#999;}
+.extension .info .memberInfo dl{margin:0;}
+.extension .info .memberInfo .widgetLogin dt{ position:absolute; width:1px; height:1px; overflow:hidden;}
+.extension .info .memberInfo .widgetLastLogin dt{ float:left; margin:0 6px 0 0; color:#999999}
+.extension .info .memberInfo dd{ margin:0; color:#bfbfbf;}
+.extension .info .memberInfo dd input{ border:1px solid #d1d1d1; padding:0 0 0 10px; width:149px; font:bold 12px Tahoma; height:18px; background:#fff; margin-bottom:10px;}
+.extension .info .memberInfo dd input:focus{background:#fff;}
+.extension .info .memberInfo p{ margin:0; color:#767676;}
+.extension .info .memberInfo .sign_in,
+.extension .info .memberInfo .sign_out{margin-top:15px; background:url(../img/btn_sign.gif) no-repeat; border:0; cursor:pointer; width:161px; font-size:14px; height:34px; display:block; color:#0e87d0; font-weight:bold}
+.extension .info .memberInfo .sign_out{ margin:17px 0 1px 14px;}
+.extension .info .memberInfo p input{ width:13px; height:13px; margin:0 10px 0 0; vertical-align:middle;}
+.extension .info .memberInfo p label{ font:11px Dotum, 돋움;}
+.extension .info .memberInfo .help{ margin:10px 0 0 0; padding:0; list-style:none;}
+.extension .info .memberInfo .help li{ background:url(../img/bu3.gif) no-repeat 0 50%; padding-left:9px;}
+.extension .info .memberInfo .help a{ color:#767676; font:11px Dotum, 돋움;}
+.extension .info .widgetMyInfo{ margin:10px 0 0 0; padding:0; list-style:none;}
+.extension .info .widgetMyInfo li{ padding:0 0 0 14px; margin:0 0 3px 0; background:url(../img/bu2.gif) no-repeat 0 3px;}
+.extension .info .widgetMyInfo li a{ color:#767676;}
+.extension .info .info_title{ border-bottom:1px solid #e3e3e3; overflow:hidden; padding:15px 0 9px 0;margin-bottom:9px;zoom:1}
+.extension .info .info_title h2{ float:left; margin:0; padding:0; font-size:12px; font-family:Arial}
+.extension .info .info_title .manage{ float:right; margin-top:-3px;}
+.extension .info .info_title .manage a{background:url(../img/bg_manage.gif) no-repeat 0 0; height:21px; line-height:21px; display:inline-block; zoom:1; color:#727272; padding-left:10px;}
+.extension .info .info_title .manage a span{background:url(../img/bg_manage.gif) no-repeat 100% 0; height:21px; line-height:21px; display:inline-block; padding-right:10px;}
+
+/* Menu */
+.cafeMenu{ position:relative; padding:15px; margin:0 0 15px 0; border:1px solid #ddd; background:#fcfcfc url(../img/iconMenu.gif) no-repeat 195px 19px; -moz-border-radius:5px; -webkit-border-radius:5px; *zoom:1;}
+.cafeMenu h2{ position:absolute; left:-1000%; width:1px; height:1px; overflow:hidden; font-size:0; line-height:0;}
+.cafeMenu ul{ margin:0; padding:0; list-style:none;}
+.cafeMenu ul li{ margin:0 0 5px 0; padding:0 0 0 15px; background:url(../img/iconInfo.gif) no-repeat left 2px;}
+.cafeMenu ul li ul{ padding:3px 0 0 0;}
+.cafeMenu ul li li{ background:url(../img/lineSub.gif) no-repeat 5px 2px;}
+.cafeMenu ul li button{ display:none;}
+.cafeMenu ul li a{ color:#767676;}
+.cafeMenu ul li a.selected{ font-weight:bold;}
+
+/* Visotor Stat */
+.visitorStat{ position:relative; padding:10px 15px; border:1px solid #ddd; background:#fdfdfd url(../img/iconVisitorStat.gif) no-repeat 195px 14px; -moz-border-radius:5px; -webkit-border-radius:5px; *zoom:1;}
+.visitorStat h2{ position:absolute; left:-1000%; width:1px; height:1px; overflow:hidden; font-size:0; line-height:0;}
+.visitorStat dl{ margin:0; color:#767676;}
+.visitorStat dt{ float:left; clear:left; height:18px; margin:0 3px 0 0; padding:0 0 0 15px; background:url(../img/iconInfo.gif) no-repeat left 2px;}
+.visitorStat dd{ color:#999; height:18px;}
+
+/* Extension E2 */
+.extension.e2{ padding:15px 0 0 0; margin:0 0 15px 0; border-top:1px dotted #ddd;}
+.extension.e2 .section{ width:188px; float:left; *display:inline; padding:15px; margin:0 26px 0 0; border:1px solid #eee; background-color:#fcfcfc; -moz-border-radius:5px; -webkit-border-radius:5px; *zoom:1;}
+.extension.e2 h2{ font-size:12px; color:#555; margin:0 0 10px 0;}
+.extension.e2 ul{ margin:0; padding:0; list-style:none;}
+.extension.e2 ol{ margin:0 0 0 22px; padding:0; color:#767676;}
+.extension.e2 li{ margin:0 0 4px 0;}
+.extension.e2 li a{ color:#767676;}
+.extension.e2 li sup{ color:#999;}
+
+.extension.e2 .newMember{ background-image:url(../img/iconMemberNew.gif); background-repeat:no-repeat; background-position:195px 16px;}
+.extension.e2 .newMember li{ padding:0 0 0 8px; background:url(../img/iconList.gif) no-repeat left 6px;}
+.extension.e2 .docRank{ background-image:url(../img/iconDocument.gif); background-repeat:no-repeat; background-position:195px 16px;}
+.extension.e2 .replyRank{ background-image:url(../img/iconReply.gif); background-repeat:no-repeat; background-position:195px 16px;}
+.extension.e2 .onMember{ float:right; margin:0; background-image:url(../img/iconMemberOn.gif); background-repeat:no-repeat; background-position:195px 16px;}
+.extension.e2 .onMember li{ padding:0 0 0 8px; background:url(../img/iconList.gif) no-repeat left 6px;}
+
+/* Widget Reset */
+.simpleWidgetStyle{ margin:0 0 30px 0 !important;}
+.simpleWidgetStyle h2{ padding:5px 0 5px 20px !important; margin:0 0 10px 0 !important; font-size:12px !important; font-family:Tahoma !important; border-bottom:2px solid #eee !important; background:url(../img/iconH2Document.gif) no-repeat left center;}
+.widgetGalleryA li{ _position:relative;}

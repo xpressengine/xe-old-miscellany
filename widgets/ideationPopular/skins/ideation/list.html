@@ -1,0 +1,32 @@
+<!--%import("css/ideation.css")-->
+<div class="popularSimple">
+    <ul>
+        <li class="active" onmouseover="jQuery(this).parent().find('li.active').removeClass('active');jQuery(this).addClass('active');return false;"><a href="#" onclick="return false;">{$lang->ip_newest_documents}</a>
+            <!--@if($widget_info->newest_documents)-->
+            <ul>
+                <!--@foreach($widget_info->newest_documents as $k => $v)-->
+                <li><a href="{$v->getPermanentUrl()}">{$v->getTitle($widget_info->subject_cut_size)}</a></li>
+                <!--@end-->
+            </ul>
+            <!--@end-->
+        </li>
+        <li onmouseover="jQuery(this).parent().find('li.active').removeClass('active');jQuery(this).addClass('active');return false;"><a href="#" onclick="return false;">{$lang->ip_popular_documents}</a>
+            <!--@if($widget_info->popular_documents)-->
+            <ul>
+                <!--@foreach($widget_info->popular_documents as $k => $v)-->
+                <li><a href="{$v->getPermanentUrl()}">{$v->getTitle($widget_info->subject_cut_size)}</a></li>
+                <!--@end-->
+            </ul>
+            <!--@end-->
+        </li>
+        <li onmouseover="jQuery(this).parent().find('li.active').removeClass('active');jQuery(this).addClass('active');return false;"><a href="#" onclick="return false;">{$lang->ip_newest_comments}</a>
+            <!--@if($widget_info->newest_comments)-->
+            <ul>
+                <!--@foreach($widget_info->newest_comments as $k => $v)-->
+                <li><a href="{$v->getPermanentUrl()}">{$v->getSummary($widget_info->subject_cut_size)}</a></li>
+                <!--@end-->
+            </ul>
+            <!--@end-->
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,18 @@
+<!--%import("./filter/logout.xml")-->
+
+<!--@if($colorset == "black" || $colorset == "white")-->
+    <!--%import("./css/widget.css")-->
+<!--@end-->
+
+<div class="widgetContainer login_info<!--@if($colorset=="black")--> black<!--@end-->">
+    <dl class="widgetLastLogin">
+        <dt>{$lang->last_login}:</dt>
+        <dd>{zDate($logged_info->last_login, "Y-m-d")}</dd>
+    </dl>
+    <ul class="widgetMyInfo">
+        <!--@foreach($logged_info->menu_list as $key => $val)-->
+        <li><a href="{getUrl('act',$key,'member_srl','')}">{Context::getLang($val)}</a></li>
+        <!--@end-->
+    </ul>
+    <input type="button" onclick="location.href='{getUrl('act','dispMemberLogout')}';return false;" value="{$lang->cmd_logout}" / class="sign_out">
+</div>

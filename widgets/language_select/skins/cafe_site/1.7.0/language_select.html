@@ -1,0 +1,17 @@
+<load cond="$colorset == 'black' || $colorset == 'white'" target="./widget.css" />
+<div class="widgetContainer<!--@if($colorset=="black")--> black<!--@end-->">
+    <div class="widgetLanguage">
+        <a href="#langList" class="language_selector">{$lang_supported[$lang_type]}</a>
+        <ul class="langList" id="langList" hidden>
+            <li loop="$lang_supported => $key,$val" cond="$key != $lang_type"><a href="{getUrl('l', $key)}">{$val}</a></li>
+        </ul>
+    </div>
+</div>
+<script>
+jQuery(function($){
+    $('.widgetLanguage .language_selector').click(function(){
+		$(this).parent().toggleClass('open');
+        return false;
+    });
+});
+</script>

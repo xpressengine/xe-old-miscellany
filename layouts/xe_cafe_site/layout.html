@@ -1,0 +1,252 @@
+<!--%import("./lang")-->
+<!--%import("./js/layout.js")-->
+<!--%import("./css/framework.css")-->
+<!--%import("./css/cafe.css")-->
+<!--%import("../../widgets/content/skins/default/css/widget.css")-->
+<!--// 모양 설정 > 본문 위치 -->
+<!--@if($layout_info->content_position == "right")-->{@$_posClass = "ec"}<!--@else-->{@$_posClass = "ce"}<!--@end-->
+
+<!--// indexUrl 설정 -->
+<!--@if(!$layout_info->index_url)-->
+    <!--@if($site_module_info)-->
+        {@$layout_info->index_url = getFullSiteUrl($site_module_info->domain)}
+    <!--@else-->
+        {@$layout_info->index_url = Context::getRequestUri()}
+    <!--@end-->
+<!--@end-->
+
+<!--// 로고 영역 이미지 -->
+<!--@if($layout_info->logo_background_image)-->
+<style> #header, .header {background-image:url("{$layout_info->logo_background_image}") !important; } </style>
+<!--@end-->
+
+<div id="xe">
+    <div class="fixed">
+        <div id="container" class="{$_posClass}">
+            <!-- #header -->
+            <div id="header">
+				<div class="header">
+					<a href="#content" class="skipToContent">Skip to content.</a>
+					<div class="menu">
+						<!--// CafeXE에서 top_menu를 자동으로 설정해준다 -->
+						<ul class="menu_lst">
+						<li loop="$cafe_xe_top_menu->list=>$key1,$val1" class="last"|cond="count($cafe_xe_top_menu->list) == $i+1">{@$i++}<a href="{$val1['href']}" target="_blank"|cond="$val1['open_window']=='Y'" cond="$val1['href']">{$val1['link']}</a></li>
+						</ul>
+
+						<ul class="menu_r">
+						<li><!--@if($logged_info)--><a href="{getUrl('act','dispMemberLogout')}">Sign Out</a><!--@end--></li>
+						<!--@if($logged_info)-->
+							<li id="profile" class="sub"><a href="#">Porfile</a>
+							<img class="zbxe_widget_output" widget="login_info" skin="cafe_site" /></li>
+						<!--@end-->
+						<li class="sub last">
+						<img class="zbxe_widget_output" widget="language_select" skin="cafe_site" />
+						</li>
+						</ul>
+						</div>
+					<!--@if($layout_info->logo_image)-->
+					<a href="{$layout_info->index_url}" class="logo"><img src="{$layout_info->logo_image}" title="{$layout_info->logo_text}" /></a>
+					<!--@end-->
+					<!--@if($layout_info->logo_text)-->
+					<h1><a href="{$layout_info->index_url}">{$layout_info->logo_text}</a><span class="url"><a href="{$layout_info->index_url}">{$layout_info->index_url}</a></span></h1>
+					<!--@else-->
+					<h1><a href="{getFullUrl('mid')}">Cafe<sup>XE</sup></a></h1>
+					<!--@end-->
+                    <!--@if(Context::get('is_homepage'))-->
+                    <ul class="topMenu">
+                    <!--@if($grant->manager)-->
+                        <li class="setup"><a href="{getUrl('act','dispHomepageManage')}">{$lang->cmd_cafe_setup}</a></li>
+                    <!--@end-->
+                    <!--@if(Context::getDefaultUrl())-->
+                        <li class="homepage"><a href="{getUrl('')}">Home</a></li>
+                    <!--@end-->
+                    </ul>
+                    <!--@end-->
+					<form action="{getUrl()}" method="post" class="search">
+						<fieldset>
+							<input type="hidden" name="vid" value="{$vid}" />
+							<input type="hidden" name="act" value="dispHomepageIS" />
+							<input type="hidden" name="search_target" value="title" />
+							<!--<legend>{$lang->cmd_search}</legend>-->
+							<input type="text" value="" name="is_keyword" class="inputText">
+							<input type="image" alt="search" src="img/btn_search.gif" class="buttonSearch">
+						</fieldset>
+					</form>
+				</div>
+            </div>
+            <!-- /#header -->
+
+            <hr class="hr" />
+
+            <!-- #body -->
+            <div id="body">
+                <div id="content" class="content">
+	                    {$content}
+                </div>
+                <hr class="hr" />
+
+                <div class="extension e1 ow_e1">
+					<!--@if(!$logged_info)-->
+						<div id="info" class="info cafe">
+						<!--// Site Status -->
+								<!--// Login Info Widget -->
+								<div class="section memberInfo">
+									<img class="zbxe_widget_output" widget="login_info" skin="cafe_site" />
+								</div>
+						</div>
+					<!--@end-->
+					<!--@if($logged_info)-->
+						 <ul class="widgetTab">
+						 <li id='cafe_info' class="cafe_info on"><a href="#">Cafe Info</a></li>
+						 <li id='member_info' class="member_info"><a href="#">Member Info</a></li>
+						 </ul>
+
+						 <!--calculate article count -->
+						 {@ $oHomepageModel = &getModel('homepage');
+							$homepageInfo = $oHomepageModel->getHomepageInfo($module_info->site_srl);
+							$oMuduleModel = &getModel('module');
+							$modules  = $oMuduleModel->getModulesInfoByLayout($module_info->layout_srl);
+							$articleCount = 0;
+						 }
+						<!--@if(count($modules)>0)-->
+							<!--@foreach($modules as $key => $module)-->
+							{@ $oDocumentModel = &getModel('document');
+							   $documentCount = $oDocumentModel->getDocumentCount($module->module_srl);
+							   $module_srl_array[$key] = $module->module_srl;
+							   $articleCount += $documentCount;
+							}
+							<!--@end-->
+						<!--@end-->
+						{@
+							$oModuleModel = &getModel('module');
+							$siteAminInfo = $oModuleModel->getSiteAdmin($homepageInfo->site_srl);
+						}
+						 <ul id='cafe_info_area' class="widgetMyInfo cafe_info">
+						 <li><span>Cafe Admin</span><b>{$siteAminInfo[0]->nick_name}</b></li>
+						 <li><span>Article</span><em>{$articleCount}</em></li>
+						 <li><span>Create&nbsp;Date</span>{zdate($homepageInfo->regdate,'Y.m.d')}</li>
+						 </ul>
+						<!--calculate comment and reply count -->
+						{@ $arg->search_target = 'member_srl';
+						   $arg->search_keyword = $logged_info->member_srl;
+						   $arg->module_srl = $module_srl_array;
+						   $oCommentModel = &getModel('comment');
+						   $memberComments = $oCommentModel->getTotalCommentList($arg);
+						   $comment_count = 0;
+						   $reply_count = 0;
+						}
+						<!--@if(count($memberComments->data)>0)-->
+							<!--@foreach($memberComments->data as $key => $comment)-->
+								<!--@if($comment->parent_srl == 0)-->
+									{@$comment_count++;}
+								<!--@else-->
+									{@$reply_count++;}
+								<!--@end-->
+							<!--@end-->
+						<!--@end-->
+						 <ul id="member_info_area" class="widgetMyInfo member_info" style="display:none">
+						 <li><span class="b">{$logged_info->nick_name}</span><a href="{getUrl('act','dispMemberModifyInfo')}"><img src="img/btn_edit.gif" width="26" height="13" alt="edit"></a></li>
+						 <li><span>Comment</span><em>{$comment_count}</em><span>Reply</span><em>{$reply_count}</em></li>
+						 <li><span>Join&nbsp;Date</span>{zdate($logged_info->regdate,'Y.m.d')}</li>
+						 </ul>
+					 <!--@end-->
+
+					 {@ $group_count = count($logged_info->group_list);}
+					 <!--@if($logged_info)-->
+						 <!--@if(!$group_count)-->
+							<div class="btn_out_site_info" style="display:none"><input type="button" onclick="doSiteSignUp(); return false;"  value="{$lang->cmd_site_signup}" ></div>
+						 <!--@else-->
+							<div class="btn_out_site_info" style="display:none"><input type="button" onclick="doSiteLeave('{$lang->confirm_leave}'); return false;" value="{$lang->cmd_leave}"></div>
+						 <!--@end-->
+						<div class="btn_out" style="display:none"><input type="button" onclick="location.href='{getUrl('act','dispMemberLogout')}';return false;" value="{$lang->cmd_logout}" /></div>
+					 <!--@end-->
+					<!--@if($site_module_info->site_srl>0)-->
+					<div class="cafeMenu">
+						<h2>{$lang->menu}</h2>
+						<img class="zbxe_widget_output" widget="navigator" skin="tree" />
+					</div>
+					<div id="info" class="info cafe">
+						<div class="section memberInfo">
+							<img class="zbxe_widget_output" widget="site_info" skin="xe_cafe_site" />
+						</div>
+					</div>
+					<div class="section visitorStat">
+						<h2>{$lang->counter}</h2>
+						<img class="zbxe_widget_output" widget="counter_status" skin="default" />
+					</div>
+				<span class="top"></span>
+				<span class="btm"></span>
+                </div>
+                <hr class="hr" />
+				<!--@end-->
+				<!--@if($mid=='home')-->
+				<div class="extension e2">
+					<div class="section newMember">
+						<h2>{$lang->new_members}</h2>
+						<img class="zbxe_widget_output" widget="member_group" skin="default" list_count="5" />
+					</div>
+					<div class="section docRank">
+						<h2>{$lang->document_ranking}</h2>
+						<img class="zbxe_widget_output" widget="rank_count" rankby="document" skin="default" list_count="5" />
+					</div>
+					<div class="section replyRank">
+						<h2>{$lang->comment_ranking}</h2>
+						<img class="zbxe_widget_output" widget="rank_count" rankby="comment" skin="default" list_count="5" />
+					</div>
+					<div class="section onMember">
+						<h2>{$lang->logged_users}</h2>
+						<img class="zbxe_widget_output" widget="logged_members" skin="default" list_count="99999" />
+					</div>
+				</div>
+				<!--@end-->
+				<span class="end top"></span>
+				<span class="end btm"></span>
+            </div>
+            <!-- /#body -->
+            <hr class="hr" />
+            <!-- #footer -->
+            <div id="footer">
+				<address>Powered&nbsp;by&nbsp;XE.</address>
+					<!-- 언어 선택 위젯 -->
+            </div>
+            <!-- /#footer -->
+        </div>
+    </div>
+</div>
+
+<script>
+jQuery(function($){
+	$('#profile>a').click(function(){
+		$(this).parent().toggleClass('on');
+		if($('#profile').hasClass('on')){
+			$('.profile_info').show();
+		}else{
+			$('.profile_info').hide();
+		}
+	});
+	if($('#cafe_info_area').is(':visible')){
+		$('.btn_out_site_info').show();
+		$('.btn_out').hide();
+	}else{
+		$('.btn_out_site_info').hide();
+		$('.btn_out').show();
+	}
+	$('#cafe_info>a').click(function(){
+		$(this).parent().addClass('on');
+		$('#member_info').removeClass('on');
+		$('#cafe_info_area').show();
+		$('#member_info_area').hide();
+		$('.btn_out_site_info').show();
+		$('.btn_out').hide();
+	});
+
+	$('#member_info>a').click(function(){
+		$(this).parent().addClass('on');
+		$('#cafe_info').removeClass('on');
+		$('#member_info_area').show();
+		$('#cafe_info_area').hide();
+		$('.btn_out_site_info').hide();
+		$('.btn_out').show();
+	});
+});
+</script>

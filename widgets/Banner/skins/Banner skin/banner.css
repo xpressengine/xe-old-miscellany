@@ -1,0 +1,24 @@
+@charset "utf-8";
+.xeBanner { position:relative; z-index:100;}
+.xeBanner .section{ position:static; height:100%;width:100%; padding-top:1px; margin:0 !important; }
+.xeBanner.v1 #v1,
+.xeBanner.v2 #v2,
+.xeBanner.v3 #v3{ display:block;}
+.xeBanner #v1{ background-position:0 0;}
+/*.xeBanner #v2{ background-position:0 -347px;}
+.xeBanner #v3{ background-position:0 -694px;}*/
+.xeBanner .section h2,
+.xeBanner .section p{ position:relative; margin:0; z-index:-1; line-height:1.2;}
+.xeBanner .section a{ position:absolute; height:22px; top:160px; left:15px; font-size:11px; padding:0 8px; overflow:hidden; text-decoration:none;}
+.xeBanner .section a span{ position:relative; top:-22px;}
+
+ul.pagination				{width:75px;height:10px;margin:0 auto !important;text-align:center;}
+ul.pagination li 			{float:left;list-style:none;width:10px;height:10px;margin-right:5px;background:url(./images/slide_page_off.gif) no-repeat top left;}
+ul.pagination li.current	{background:url(./images/slide_page_on.gif) no-repeat top left;}
+ul.pagination a				{text-decoration:none;}
+
+/* slide_widget */
+.slide_widget				{position:relative;}
+.slide_widget .mask			{position:relative;z-index:80;margin:0 auto;padding:0;overflow:hidden;}
+.slide_widget ul			{margin:0; padding:0;}
+.slide_widget li			{float:left;list-style:none;}

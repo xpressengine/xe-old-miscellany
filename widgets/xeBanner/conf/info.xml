@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">XE Banner Slider</title>
+	<title xml:lang="en">XE Banner Silder</title>
+	<title xml:lang="zh-CN">XE Banner Silder</title>
+	<description xml:lang="ko">XE widget for images slider</description>
+	<description xml:lang="en">XE widget for images slider</description>
+	<description xml:lang="zh-CN">图片滚动小部件</description>
+	<version>0.1</version>
+	<date>2009-06-10</date>
+
+	<author email_address="developers@xpressengine.com" link="http://www.xpressengine.com">
+		<name xml:lang="ko">NHN</name>
+		<name xml:lang="en">NHN</name>
+		<name xml:lang="zh-CN">NHN</name>
+	</author>
+
+	<extra_vars>
+        <var id="banner_width">
+            <type >text</type>
+			<name xml:lang="ko">Image width</name>
+			<name xml:lang="en">Image width</name>
+			<name xml:lang="zh-CN">图片宽度</name>
+            <description xml:lang="ko">Input the width of the image (default 958px)</description>
+            <description xml:lang="en">Input the width of the image (default 958px)</description>
+            <description xml:lang="zh-CN">请输入图片宽度（默认为 958px）</description>
+        </var>
+		<var id="banner_height">
+            <type >text</type>
+			<name xml:lang="ko">Image height</name>
+			<name xml:lang="en">Image height</name>
+			<name xml:lang="zh-CN">图片高度</name>
+            <description xml:lang="ko">Input the height of the image (default 396px)</description>
+            <description xml:lang="en">Input the height of the image (default 396px)</description>
+            <description xml:lang="zh-CN">请输入图片高度（默认为 396px）</description>
+        </var>
+        <var id="banner_1">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">Image #1</name>
+			<name xml:lang="en">Image #1</name>
+			<name xml:lang="zh-CN">横幅图片#1</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
+        </var>
+        <var id="banner_title_1">
+            <type>text</type>
+            <name xml:lang="ko">Title for image #1</name>
+            <name xml:lang="en">Title for image #1</name>
+            <name xml:lang="zh-CN">图片#1的标题</name>
+        </var>
+        <var id="banner_description_1">
+            <type>text</type>
+            <name xml:lang="ko">Description for image #1</name>
+            <name xml:lang="en">Description for image #1</name>
+            <name xml:lang="zh-CN">图片#1的描述</name>
+        </var>
+        <var id="banner_url_1">
+            <type>text</type>
+            <name xml:lang="ko">URL for image #1</name>
+            <name xml:lang="en">URL for image #1</name>
+            <name xml:lang="zh-CN">图片#1的链接</name>
+        </var>
+        <var id="banner_2">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">Image #2</name>
+			<name xml:lang="en">Image #2</name>
+			<name xml:lang="zh-CN">横幅图片#2</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
+        </var>
+        <var id="banner_title_2">
+            <type>text</type>
+            <name xml:lang="ko">Title for image #2</name>
+            <name xml:lang="en">Title for image #2</name>
+            <name xml:lang="zh-CN">图片#2的标题</name>
+        </var>
+        <var id="banner_description_2">
+            <type>text</type>
+            <name xml:lang="ko">Description for image #2</name>
+            <name xml:lang="en">Description for image #2</name>
+            <name xml:lang="zh-CN">图片#2的描述</name>
+        </var>
+        <var id="banner_url_2">
+            <type>text</type>
+            <name xml:lang="ko">URL for image #2</name>
+            <name xml:lang="en">URL for image #2</name>
+            <name xml:lang="zh-CN">图片#2的链接</name>
+        </var>
+        <var id="banner_3">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">Image #3</name>
+			<name xml:lang="en">Image #3</name>
+			<name xml:lang="zh-CN">横幅图片#3</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
+        </var>
+        <var id="banner_title_3">
+            <type>text</type>
+            <name xml:lang="ko">Title for image #3</name>
+            <name xml:lang="en">Title for image #3</name>
+            <name xml:lang="zh-CN">图片#3的标题</name>
+        </var>
+        <var id="banner_description_3">
+            <type>text</type>
+            <name xml:lang="ko">Description for image #3</name>
+            <name xml:lang="en">Description for image #3</name>
+            <name xml:lang="zh-CN">图片#3的描述</name>
+        </var>
+        <var id="banner_url_3">
+            <type>text</type>
+            <name xml:lang="ko">URL for image #3</name>
+            <name xml:lang="en">URL for image #3</name>
+            <name xml:lang="zh-CN">图片#3的链接</name>
+        </var>
+        <var id="banner_4">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">Image #4</name>
+			<name xml:lang="en">Image #4</name>
+			<name xml:lang="zh-CN">横幅图片#4</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
+        </var>
+	    <var id="banner_title_4">
+            <type>text</type>
+            <name xml:lang="ko">Title for image #4</name>
+            <name xml:lang="en">Title for image #4</name>
+            <name xml:lang="zh-CN">图片#4的标题</name>
+        </var>
+        <var id="banner_description_4">
+            <type>text</type>
+            <name xml:lang="ko">Description for image #4</name>
+            <name xml:lang="en">Description for image #4</name>
+            <name xml:lang="zh-CN">图片#4的描述</name>
+        </var>
+        <var id="banner_url_4">
+            <type>text</type>
+            <name xml:lang="ko">URL for image #4</name>
+            <name xml:lang="en">URL for image #4</name>
+            <name xml:lang="zh-CN">图片#4的链接</name>
+        </var>
+        <var id="banner_5">
+            <type filter="jpg,jpeg,gif,png">filebox</type>
+			<name xml:lang="ko">Image #5</name>
+			<name xml:lang="en">Image #5</name>
+			<name xml:lang="zh-CN">横幅图片#5</name>
+			<description xml:lang="ko">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="en">Image type:jpg,jpeg,gif,png</description>
+            <description xml:lang="zh-CN">图片类型：jpg,jpeg,gif,png</description>
+        </var>
+        <var id="banner_title_5">
+            <type>text</type>
+            <name xml:lang="ko">Title for image #5</name>
+            <name xml:lang="en">Title for image #5</name>
+            <name xml:lang="zh-CN">图片#5的标题</name>
+        </var>
+        <var id="banner_description_5">
+            <type>text</type>
+            <name xml:lang="ko">Description for image #5</name>
+            <name xml:lang="en">Description for image #5</name>
+            <name xml:lang="zh-CN">图片#5的描述</name>
+        </var>
+        <var id="banner_url_5">
+            <type>text</type>
+            <name xml:lang="ko">URL for image #5</name>
+            <name xml:lang="en">URL for image #5</name>
+            <name xml:lang="zh-CN">图片#5的链接</name>
+        </var>
+	</extra_vars>
+</widget>

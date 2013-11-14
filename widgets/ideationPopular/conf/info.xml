@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget version="0.2">
+	<title xml:lang="ko">최근 글/댓글, 인기글 출력 위젯</title>
+	<description xml:lang="ko">한개 혹은 한 개 이상의 모듈을 대상으로 최근 글/ 인기글/ 최근 댓글 3개의 컨텐츠를 출력하는 위젯입니다</description>
+	<version>0.1</version>
+	<date>2009-07-13</date>
+
+	<author email_address="zero@zeroboard.com" link="http://www.xpressengine.com">
+		<name xml:lang="ko">zero</name>
+	</author>
+
+	<extra_vars>
+        <var id="list_count">
+            <type>text</type>
+            <name xml:lang="ko">목록수</name>
+            <description xml:lang="ko">출력될 목록의 수를 정하실 수 있습니다. (기본 5개)</description>
+        </var>
+		<var id="subject_cut_size">
+			<type>text</type>
+			<name xml:lang="ko">제목 글자수</name>
+			<description xml:lang="ko">제목 글자수를 지정할 수 있습니다. (0또는 비워주시면 자르지 않습니다)</description>
+		</var>
+		<var id="module_srls">
+			<type>module_srl_list</type>
+			<name xml:lang="ko">대상 모듈</name>
+			<description xml:lang="ko">선택하신 모듈에 등록된 글을 대상으로 합니다.</description>
+		</var>
+	</extra_vars>
+</widget>
